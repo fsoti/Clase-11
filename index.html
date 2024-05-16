@@ -9,9 +9,10 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/chartist/0.11.4/chartist.min.css" integrity="sha512-V0+DPzYyLzIiMiWCg3nNdY+NyIiK9bED/T1xNBj08CaIUyK3sXRpB26OUCIzujMevxY9TRJFHQIxTwgzb0jVLg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
   <body>
-    <div class="col-12 mx-auto text-center my-5 display-5">Aprendiendo como aplicar gráficos</div>
-    <h4 class="col-10 text-center mx-auto fs-6">Primero se utilizó la herramienta que nos proporciona RawGraphs para explorar los diferentes tipos de datos. En este caso se usaron para hacer un ejercicio de ejemplo los datos entregados por la misma plataforma. Además, se siguió la recomendación del tipo de gráfico en relación al conjunto de datos escogido.</h4>
+    <div class="col-12 mx-auto text-center my-5 display-5">Aprendiendo a utilizar gráficos</div>
+    <h4 class="col-10 text-center mx-auto fs-6">Primero, se utilizó la herramienta proporcionada por RawGraphs para explorar los diferentes tipos de gráficos y datos. En este caso, se emplearon los datos entregados por la misma plataforma para realizar un ejercicio de ejemplo. Además, se siguió la recomendación sobre el tipo de gráfico más adecuado en relación con el conjunto de datos seleccionado.</h4>
     <h2 class="text-center my-5">Bubble chart</h2>
+    <p class="text-center">Se eligió el conjunto de datos con título: Highest grossing movies in history</p>
     <div class="col-10 mx-auto">
       <svg xmlns="http://www.w3.org/2000/svg" viewbox="0 0 700 600">
         <rect width="700" height="600" x="0" y="0" fill="#FFFFFF" id="background" />
@@ -293,19 +294,42 @@
     </svg>
     </div>
 
+    <h4 class="text-center col-10 mx-auto fs-6">En segundo lugar, utilizamos el mismo conjunto de datos, pero los modificamos para calcular el promedio del ROI y el BOX OFFICE en cada género de películas. Para ello, empleamos la categorización previamente realizada por RAWGRAPHS. A diferencia del ejercicio anterior, en este caso utilizamos la herramienta proporcionada por CHARTIST, la cual utiliza JavaScript para generar el gráfico.</h4>
+    <h2 class="text-center mb-2 mt-5">Pie Chart</h2>
+
     <div class="row">
       <div class="col-6">
+        <h4 class="text-center my-5">Promedio de ROI en cada género</h4>
+
         <div class="chart1 ct-perfect-fourth"></div>
       </div>
       <div class="col-6 ">
+        <h4 class="text-center my-5">Promedio de BOX OFFICE en cada género</h4>
+
         <div class="chart2 ct-perfect-fourth"></div>
       </div>
     </div>
+    <h4 class="text-center col-10 mx-auto fs-6">Dado que la intención de calcular el promedio en cada género de película es poder comparar las cantidades entre sí, el Pie Chart no permite hacer esta comparación de manera efectiva. Esto se debe a que el área correspondiente a cada valor está en un ángulo, lo cual es difícil de comparar a simple vista para el ojo humano, a menos que las diferencias sean muy evidentes.</h4>
+    <h4 class="text-center col-10 mx-auto fs-6 my-5">Para mejorar la comparación de los promedios de ROI y BOX OFFICE entre los diferentes géneros de películas, utilizamos un gráfico de barras. Este tipo de gráfico permite visualizar las diferencias de manera más clara y precisa, ya que las longitudes de las barras facilitan la comparación directa entre los valores, eliminando la dificultad que presenta el gráfico de pastel para el ojo humano.</h4>
+    <h2 class="text-center my-5">Horizontal Bar Chart</h2>
+    <p class="text-center">El tono más claro corresponde a ROI y el más oscuro a BOX OFFICE.</p>
 
     <div class="col-10 mx-auto">
       <div class="chart3 ct-perfect-fourth"></div>
     </div>
-
+    <h2 class="text-center mb-2 mt-5">Para seguir explorando...</h2>
+    <h4 class="text-center col-10 mx-auto fs-6 my-5">El último ejercicio consistió en buscar un conjunto de datos real y utilizar la función de Google para importar tablas y realizar un gráfico adecuado para el análisis de estos datos.</h4>
+    <h3 class="text-center mb-2 mt-5" style="color: darkred;">Los 100 mejores libros de todos los tiempos, según el Club de Libros de Noruega</h3>
+    <h4 class="text-center col-10 mx-auto fs-6 my-5">Se clasificaron y contaron los libros por idioma para realizar una comparación de los idiomas en los que están escritos. Se presentan en los gráficos los idiomas ordenados por orden alfabético de a la A a la Z.</h4>
+    <h2 class="text-center my-5">Bar Chart</h2>
+    <div class="col-10 mx-auto">
+      <div class="chart4 ct-perfect-fourth"></div>
+    </div>
+    <h4 class="text-center col-10 mx-auto fs-6 my-5">Por alguna razón, CHARTIST tiene un límite en la cantidad de barras y colores que puede mostrar, por esto los últimos idiomas no presentan barras. Debido a esto, se decidió utilizar otra opción de gráficos de barras.</h4>
+    <div class="col-10 mx-auto">
+      <div class="chart5 ct-perfect-fourth"></div>
+    </div>
+    <h4 class="text-center col-10 mx-auto fs-6 my-5">En este gráfico se observan las comparaciones de la cantidad de libros escritos en cada idioma. Se destaca claramente la ventaja del idioma inglés, con 20 libros de los 100 elegidos por el club de libros de Noruega. En segundo lugar, se encuentran los libros escritos en francés, y en tercer lugar, hay una disputa entre los libros en alemán y ruso. Sin embargo, dado que los puntos de la rejilla no están alineados con el final de las barras, la legibilidad es limitada, dificultando la diferenciación precisa de la longitud de las barras. A pesar de esto, el gráfico ofrece una visión general del panorama.</h4>
     <div class="col-12 text-center my-5">✦ Clase 11 por Francisca Soto Arriarán ✦</div>
     
 
@@ -358,6 +382,35 @@
         offset: 70
       }
     });
+    new Chartist.Bar('.chart4', {
+  labels: ['Acadio', 'Alemán', 'Árabe', 'Chino', 'Danés', 'Español', 'Francés','Griego', 'Hebreo' , 'Inglés', 'Islandés', 'Italiano', 'Japonés', 'Latín clásico' , 'Nórdico antiguo', 'Noruego', 'Persa' , 'Portugués', 'Ruso', 'Sánscrito', 'Sueco'],
+  series: [1, 9, 3, 1, 1, 6, 12, 6, 1, 20, 1, 5, 2, 2, 1, 2, 2, 3, 9, 3, 1]
+}, {
+  distributeSeries: true
+});
+    var data = {
+  labels: ['Acadio', 'Alemán', 'Árabe', 'Chino', 'Danés', 'Español', 'Francés','Griego', 'Hebreo' , 'Inglés', 'Islandés', 'Italiano', 'Japonés', 'Latín clásico' , 'Nórdico antiguo', 'Noruego', 'Persa' , 'Portugués', 'Ruso', 'Sánscrito', 'Sueco'],
+  series: [
+    [1, 9, 3, 1, 1, 6, 12, 6, 1, 20, 1, 5, 2, 2, 1, 2, 2, 3, 9, 3, 1],
+  ]
+};
+
+var options = {
+  seriesBarDistance: 10
+};
+
+var responsiveOptions = [
+  ['screen and (max-width: 640px)', {
+    seriesBarDistance: 5,
+    axisX: {
+      labelInterpolationFnc: function (value) {
+        return value[0];
+      }
+    }
+  }]
+];
+
+new Chartist.Bar('.chart5', data, options, responsiveOptions);
     </script>
   </body>
 </html>
